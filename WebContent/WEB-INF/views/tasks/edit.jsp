@@ -8,5 +8,16 @@
 </c:import>
 </form>
 <a href ="${pageContext.request.contextPath}/Index">一覧に戻る</a>
+<a href ="#" onclick="confirmDestroy();">このメッセージを削除する</a>
+<form method ="post" action ="${pageContext.request.contextPath}/Destroy">
+<input type ="hidden" name ="token" value="${token}"/>
+</form>
+<script>
+function confirmDestroy(){
+    if(confirm("本当に削除してよろしいですか?")){
+        document.forms[1].submit();
+    }
+}
+</script>
 </c:param>
 </c:import>
